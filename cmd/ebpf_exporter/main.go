@@ -62,8 +62,5 @@ func main() {
 	}
 
 	log.Printf("Listening on %s", *listenAddress)
-	err = http.ListenAndServe(*listenAddress, nil)
-	if err != nil {
-		log.Fatalf("Error listening on %s: %s", *listenAddress, err)
-	}
+	log.Fatal(http.ListenAndServe(*listenAddress, nil))
 }
